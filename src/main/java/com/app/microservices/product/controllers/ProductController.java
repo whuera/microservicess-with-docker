@@ -18,6 +18,11 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    /**
+     *
+     * @param categoryId
+     * @return
+     */
     @GetMapping
     public ResponseEntity<List<Product>> listProduct(@RequestParam(name = "categoryId", required = false) Long categoryId){
         List<Product> products = new ArrayList<>();
@@ -46,6 +51,11 @@ public class ProductController {
         return ResponseEntity.ok(product);
     }
 
+    /**
+     *
+     * @param product
+     * @return
+     */
     @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody Product product){
         /* if (result.hasErrors()){
