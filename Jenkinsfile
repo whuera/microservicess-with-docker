@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('paso 1') {
       steps {
-        withGradle()
+        withGradle() {
+          sleep 6
+        }
+
       }
     }
 
